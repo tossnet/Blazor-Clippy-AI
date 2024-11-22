@@ -4,7 +4,7 @@
     const images = [
         "assets/clippy.png",
         "assets/clippy2.png",   // Sourcils haut
-        "assets/clippy3.png"    //Mouv yeux
+        "assets/clippy3.png"    // Mouv yeux
     ];
 
     let currentImageIndex = 0; 
