@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35507.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorClippyAI", "BlazorClippyAI\BlazorClippyAI.csproj", "{27A4C259-63FA-4076-A881-522E86405386}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27A4C259-63FA-4076-A881-522E86405386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27A4C259-63FA-4076-A881-522E86405386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27A4C259-63FA-4076-A881-522E86405386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27A4C259-63FA-4076-A881-522E86405386}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {449D6938-39E1-419F-A8AA-6F85458A24E8}
+	EndGlobalSection
+EndGlobal

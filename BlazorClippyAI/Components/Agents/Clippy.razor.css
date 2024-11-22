@@ -1,0 +1,87 @@
+﻿.clippy-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.dialog-box {
+    width: 300px;
+    background-color: rgba(255, 255, 204); 
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 10px;
+}
+
+    .dialog-box p {
+        max-height: 500px;
+        overflow-y: auto; 
+        overflow-x: hidden;
+    }
+
+.dialog-content {
+    font-size: 16px;
+    color: #333;
+    flex-grow: 1;
+}
+
+.dialog-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.input-text {
+    width: 100%; 
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+    outline: none;
+    background-color: #fff;
+    color: #333;
+}
+
+    .input-text::placeholder {
+        color: #999;
+    }
+
+.enter-button {
+    width: 70px; 
+    height: 25px;
+    border: none;
+    background-color: rgba(255, 255, 204, 0.9);
+    border: 1px solid #ccc;
+    color: #333;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    align-self: flex-end;
+}
+
+    .enter-button:hover {
+        background-color: #EDEDBF;
+    }
+
+    .enter-button:active {
+        background-color: #DDDDAF;
+    }
+
+.clippy {
+    width: 150px;
+    height: auto;
+    align-self: flex-end;
+    transition: opacity 0.2s ease;
+}

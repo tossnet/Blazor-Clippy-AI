@@ -1,0 +1,17 @@
+﻿<div class="clippy-container" id="clippy-container">
+    <div class="dialog-box">
+        <div class="dialog-content">
+            <p>@_answers</p>
+        </div>
+        <div class="dialog-input">
+            <input type="text" 
+                   class="input-text" 
+                   placeholder="Votre message ici..." 
+                   @bind="_message"
+				   @bind:event="oninput"
+                   @onkeydown="@ValideMessage" />
+            <button class="enter-button" @onclick="sendMessage">ENTER</button>
+        </div>
+    </div>
+    <img src="assets/clippy.png" alt="Clippy" class="clippy" id="clippy">
+</div>
