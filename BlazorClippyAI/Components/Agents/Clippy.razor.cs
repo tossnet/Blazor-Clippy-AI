@@ -17,12 +17,13 @@ public partial class Clippy : IAsyncDisposable
 
     private string _message = string.Empty;
     private string _answers = "Bonjour !";
+
     private ChatHistory _history = new();
-    private IChatCompletionService _chatService { get; set; }
+    private IChatCompletionService ChatService { get; set; }
 
     public Clippy(IChatCompletionService chatService)
     {
-        _chatService = chatService;
+        ChatService = chatService;
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -52,7 +53,7 @@ public partial class Clippy : IAsyncDisposable
     private async Task sendMessage()
     {
         _history.AddUserMessage(_message);
-        ChatMessageContent assistant = await _chatService.GetChatMessageContentAsync(_history);
+        ChatMessageContent assistant = await ChatService.GetChatMessageContentAsync(_history);
 
         _answers = assistant.ToString();
         _message = string.Empty;
@@ -78,7 +79,7 @@ public partial class Clippy : IAsyncDisposable
             {
                 await JSClippy.DisposeAsync();
             }
-            catch (Exception)
+            catch (JSDisconnectedException)
             {
                 throw;
             }
@@ -90,7 +91,7 @@ public partial class Clippy : IAsyncDisposable
             {
                 await JSDragDrop.DisposeAsync();
             }
-            catch (Exception)
+            catch (JSDisconnectedException)
             {
                 throw;
             }
