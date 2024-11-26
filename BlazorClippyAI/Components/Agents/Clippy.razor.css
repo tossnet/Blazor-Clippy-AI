@@ -57,7 +57,13 @@
         color: #999;
     }
 
-.enter-button {
+.dialog-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.clippy-button {
     width: 70px; 
     height: 25px;
     border: none;
@@ -68,14 +74,12 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.2s ease;
-    align-self: flex-end;
 }
-
-    .enter-button:hover {
+    .clippy-button:hover {
         background-color: #EDEDBF;
     }
 
-    .enter-button:active {
+    .clippy-button:active {
         background-color: #DDDDAF;
     }
 
