@@ -8,13 +8,14 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 
-// --- Part SemanticKernel
+// --- SemanticKernel part
 string azureEndpoint = builder.Configuration["AI:OpenAI:Endpoint"];
 string azureApiKey = builder.Configuration["AI:OpenAI:Key"];
 string deploymentName = builder.Configuration["AI:OpenAI:deploymentName"];
 
 builder.Services.AddAzureOpenAIChatCompletion(deploymentName, azureEndpoint, azureApiKey);
 builder.Services.AddKernel();
+
 //builder.Services.AddLogging(services => services.AddConsole().SetMinimumLevel(LogLevel.Trace));
 // ---
 
