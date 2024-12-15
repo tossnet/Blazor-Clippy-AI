@@ -2,7 +2,7 @@
 using Microsoft.SemanticKernel;
 using System.ComponentModel;
 
-namespace BlazorClippyAI.Components.Agents.Plugin;
+namespace BlazorClippyAI.Agents;
 
 public class NavigationPlugin
 {

@@ -17,6 +17,8 @@ builder.Services.AddAzureOpenAIChatCompletion(deploymentName, azureEndpoint, azu
 builder.Services.AddKernel();
 
 //builder.Services.AddLogging(services => services.AddConsole().SetMinimumLevel(LogLevel.Trace));
+
+builder.Services.AddScoped<BlazorClippyAI.Agents.ClippyService>();
 // ---
 
 var app = builder.Build();
