@@ -1,7 +1,6 @@
 ﻿using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.Connectors.OpenAI;
-using System.Runtime;
 
 namespace BlazorClippyAI.Agents;
 
@@ -14,7 +13,7 @@ public class ClippyService
     private ChatHistory _history = new();
 
     public ClippyService(IChatCompletionService chatService,
-                     Kernel kernel)
+                         Kernel kernel)
     {
         KernelService = kernel;
         ChatService = chatService;
@@ -26,10 +25,10 @@ public class ClippyService
             ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions,
         };
 
-        _history.AddUserMessage("Tu t'appelles Clippy. Tu étais un compagnon Office et tu es né fin de l'année 1996");
+        _history.AddSystemMessage("Tu t'appelles Clippy. Tu étais un compagnon Office et tu es né fin de l'année 1996");
 
-        _history.AddUserMessage("La page Counter est un exemple Blazor qui explique simplement le principe d'interactivité avec un bouton et un compteur.");
-        _history.AddUserMessage("La page Wheather est un exemple Blazor qui simule le chargement de donnée via une API et affiche des données fictives de météo.");
+        _history.AddSystemMessage("La page Counter est un exemple Blazor qui explique simplement le principe d'interactivité avec un bouton et un compteur.");
+        _history.AddSystemMessage("La page Wheather est un exemple Blazor qui simule le chargement de donnée via une API et affiche des données fictives de météo.");
     }
 
     public async Task<string> GetResponse(string message)
