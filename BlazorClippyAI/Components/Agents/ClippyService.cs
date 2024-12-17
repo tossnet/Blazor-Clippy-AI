@@ -6,9 +6,8 @@ namespace BlazorClippyAI.Agents;
 
 public class ClippyService
 {
-    private IChatCompletionService ChatService { get; set; } = default!;
-    private Kernel KernelService { get; set; } = default!;
-
+    private IChatCompletionService ChatService;
+    private Kernel KernelService;
     private PromptExecutionSettings _settings;
     private ChatHistory _history = new();
 
@@ -35,17 +34,19 @@ public class ClippyService
     {
         _history.AddUserMessage(message);
 
-        ChatMessageContent assistant;
+        string response;
+
         try
         {
-            assistant = await ChatService.GetChatMessageContentAsync(_history, _settings, KernelService);
+            ChatMessageContent assistant = await ChatService.GetChatMessageContentAsync(_history, _settings, KernelService); 
+            response = assistant.ToString();
         }
         catch (Exception)
         {
-            throw;
+            response = "Je suis désolé, j'ai rencontré une erreur inattendue.";
         }
 
-        return assistant.ToString();
+        return response;
     }
 
     public void AddHistory(string message)

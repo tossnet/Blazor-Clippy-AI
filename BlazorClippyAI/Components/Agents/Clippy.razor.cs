@@ -11,9 +11,9 @@ public partial class Clippy : IAsyncDisposable, IDisposable
     [Inject] private NavigationManager NavManager { get; set; } = default!;
     [Inject] private ClippyService _ClippyService { get; set; } = default!;
 
-    private IJSObjectReference JSClippy { get; set; } = default!;
-    private IJSObjectReference JSDragDrop { get; set; } = default!;
-    private IJSObjectReference JsSpeak { get; set; } = default!;
+    private IJSObjectReference? JSClippy;
+    private IJSObjectReference? JSDragDrop;
+    private IJSObjectReference? JsSpeak;
 
     private IDisposable _registration;
     private string _message = string.Empty;
